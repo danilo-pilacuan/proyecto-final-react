@@ -5,15 +5,19 @@ import {useSelector,useDispatch } from 'react-redux';
 // import { addTodo } from '../redux/todoSlice';
 import { setToken } from '../redux/tokenSlice';
 //import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 import Footer from "./../componentes/footer";
 import NavegacionLogin from "./../componentes/nav-login";
 
 const Login=()=> {
-    
+  
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 //   const tokenRed = useSelector((state) => {
 //     console.log(state)
     
@@ -45,6 +49,7 @@ const Login=()=> {
                         value: response.data,
                     })
                 );
+                navigate("/admin");
             } )
             .catch((error) => console.log("error"));
 

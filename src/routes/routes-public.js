@@ -9,12 +9,5 @@ export default [
         route: "/products",
         component: <Products />,
         showLink:true
-    },
-    {
-        name: "Administracion",
-        key:"admin",
-        route: "/admin",
-        component: <LayoutPrivate />,
-        showLink:true
     }
 ];

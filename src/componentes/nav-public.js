@@ -1,7 +1,12 @@
 import routesPublic from "../routes/routes-public";
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const NavegacionPublica = () => {
+  const token = useSelector((state) => state.token);
+  const navigate = useNavigate();
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-dark"
@@ -32,8 +37,8 @@ const NavegacionPublica = () => {
             
           </ul>
           <form className="form-inline my-2 my-lg-0">
-            <button className="btn btn-success m-1 my-2 my-sm-0" type="submit">Iniciar Sesión</button>
-            <button className="btn btn-danger m-1 my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+            ({token.length==0?<button onClick={()=>{navigate("/login");}} className="btn btn-success m-1 my-2 my-sm-0" type="button">Iniciar Sesión</button>:
+            <button className="btn btn-danger m-1 my-2 my-sm-0" type="button">Cerrar Sesión</button>})
           </form>
         </div>
       </div>

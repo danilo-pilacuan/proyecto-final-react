@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const tokenSlice = createSlice({
 	name: 'tokens',
-	initialState: "my-dummie-token",
+	initialState: "",
 	reducers: {
 		addTodo: (state, action) => {
 			const todo = {
