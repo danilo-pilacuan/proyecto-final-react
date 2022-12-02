@@ -43,10 +43,6 @@ const NavegacionPrivada = () => {
             {routesPrivate.filter((r)=>r.showLink===true).map((route)=><li key={route.key} className="nav-item">
               <Link to={route.route} className="nav-link"> {route.name}</Link>
             </li>)} 
-           
-            <li className="nav-item">
-              <Link to="/" className="nav-link">Sitio público</Link>
-            </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             ({token.length==0?<button onClick={()=>{navigate("/login");}} className="btn btn-success m-1 my-2 my-sm-0" type="button">Iniciar Sesión</button>:
